@@ -120,8 +120,7 @@ fn len() {
                 assert!(len <= CAP);
             }
         });
-    })
-    .unwrap();
+    });
     assert_eq!(q.len(), 0);
 }
 
@@ -157,8 +156,7 @@ fn spsc() {
                 }
             }
         });
-    })
-    .unwrap();
+    });
 }
 
 #[test]
@@ -196,8 +194,7 @@ fn spsc_ring_buffer() {
 
             t.fetch_sub(1, Ordering::SeqCst);
         });
-    })
-    .unwrap();
+    });
 
     for c in v {
         assert_eq!(c.load(Ordering::SeqCst), 1);
@@ -233,8 +230,7 @@ fn mpmc() {
                 }
             });
         }
-    })
-    .unwrap();
+    });
 
     for c in v {
         assert_eq!(c.load(Ordering::SeqCst), THREADS);
@@ -277,8 +273,7 @@ fn mpmc_ring_buffer() {
                 t.fetch_sub(1, Ordering::SeqCst);
             });
         }
-    })
-    .unwrap();
+    });
 
     for c in v {
         assert_eq!(c.load(Ordering::SeqCst), THREADS);
@@ -335,8 +330,7 @@ fn drops() {
                     }
                 }
             });
-        })
-        .unwrap();
+        });
 
         for _ in 0..additional {
             q.push(DropCounter).unwrap();
@@ -375,8 +369,7 @@ fn linearizable() {
                 }
             });
         }
-    })
-    .unwrap();
+    });
 }
 
 #[test]

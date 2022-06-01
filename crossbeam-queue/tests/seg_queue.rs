@@ -80,8 +80,7 @@ fn spsc() {
                 q.push(i);
             }
         });
-    })
-    .unwrap();
+    });
 }
 
 #[cfg_attr(miri, ignore)] // Miri is too slow
@@ -113,8 +112,7 @@ fn mpmc() {
                 }
             });
         }
-    })
-    .unwrap();
+    });
 
     for c in v {
         assert_eq!(c.load(Ordering::SeqCst), THREADS);
@@ -167,8 +165,7 @@ fn drops() {
                     q.push(DropCounter);
                 }
             });
-        })
-        .unwrap();
+        });
 
         for _ in 0..additional {
             q.push(DropCounter);

@@ -200,8 +200,7 @@ mod tests {
                     }
                 });
             }
-        })
-        .unwrap();
+        });
     }
 
     #[cfg(not(crossbeam_sanitize))] // TODO: assertions failed due to `cfg(crossbeam_sanitize)` reduce `internal::MAX_OBJECTS`
@@ -452,8 +451,7 @@ mod tests {
                     }
                 });
             }
-        })
-        .unwrap();
+        });
 
         let handle = collector.register();
         while DROPS.load(Ordering::Relaxed) < COUNT * THREADS {

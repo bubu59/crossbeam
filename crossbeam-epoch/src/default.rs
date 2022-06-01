@@ -79,7 +79,6 @@ mod tests {
                 super::pin();
                 // At thread exit, `HANDLE` gets dropped first and `FOO` second.
             });
-        })
-        .unwrap();
+        });
     }
 }
