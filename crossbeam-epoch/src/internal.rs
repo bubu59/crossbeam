@@ -56,7 +56,7 @@ use crate::sync::queue::Queue;
 
 /// Maximum number of objects a bag can contain.
 #[cfg(not(crossbeam_sanitize))]
-const MAX_OBJECTS: usize = 62;
+const MAX_OBJECTS: usize = 60;
 #[cfg(crossbeam_sanitize)]
 const MAX_OBJECTS: usize = 4;
 
