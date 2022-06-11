@@ -173,8 +173,6 @@ impl Default for Bag {
                 Deferred::new(no_op_func),
                 Deferred::new(no_op_func),
                 Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
             ],
         };
         #[cfg(crossbeam_sanitize)]
