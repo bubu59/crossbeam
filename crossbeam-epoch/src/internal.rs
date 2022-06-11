@@ -56,7 +56,7 @@ use crate::sync::queue::Queue;
 
 /// Maximum number of objects a bag can contain.
 #[cfg(not(crossbeam_sanitize))]
-const MAX_OBJECTS: usize = 60;
+const MAX_OBJECTS: usize = 50;
 #[cfg(crossbeam_sanitize)]
 const MAX_OBJECTS: usize = 4;
 
@@ -113,16 +113,6 @@ impl Default for Bag {
         return Bag {
             len: 0,
             deferreds: [
-                Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
-                Deferred::new(no_op_func),
                 Deferred::new(no_op_func),
                 Deferred::new(no_op_func),
                 Deferred::new(no_op_func),
